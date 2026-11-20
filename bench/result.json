@@ -1,0 +1,37 @@
+{
+  "generated": "bench/bench.mjs (deterministic scene from tools/gen-sample.mjs)",
+  "scene": {
+    "trisA": 252,
+    "trisB": 252,
+    "triPairs": 63504
+  },
+  "clearance": {
+    "d2": 1.4400000000000004,
+    "minDist": 1.2000000000000002,
+    "witnessA_tri": 152,
+    "witnessB_tri": 140,
+    "bvhDistEvals": 937,
+    "bruteDistEvals": 63504,
+    "pruneRatioPct": 1.4754976064499874,
+    "d2MatchBrute": 0
+  },
+  "timing": {
+    "cold_firstBvhQuery_ms": 24.434357000000002,
+    "bvh": {
+      "samples": 9,
+      "min": 1.5764102400000046,
+      "median": 1.827475260000001,
+      "p95": 2.2281497399999988,
+      "max": 2.2281497399999988,
+      "stddev": 0.2120648271380946,
+      "rsd_pct": 11.536987002572863
+    },
+    "brute": {
+      "samples": 9,
+      "median": 73.64307566666669,
+      "min": 67.6379696666667
+    },
+    "speedup_brute_over_bvh_median": 40.29771416258004,
+    "note": "per-query ms; BVH = 9 samples x 50-query batches after 3 warmups, brute = 9 samples x 3-query batches."
+  }
+}

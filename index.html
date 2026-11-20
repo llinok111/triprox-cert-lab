@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>triprox-cert-lab — inter-mesh minimum clearance</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0b0f14; color: #d7e2ee; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  #app { position: fixed; inset: 0; }
+  #hud { position: fixed; left: 14px; top: 14px; padding: 12px 14px; background: rgba(15,23,32,.86); border: 1px solid #24374a; border-radius: 10px; font-size: 13px; line-height: 1.55; max-width: 340px; }
+  #hud h1 { font-size: 14px; margin: 0 0 6px; color: #7fd1ff; }
+  #hud .num { color: #ffd479; font-weight: 700; }
+  #hud input[type=range] { width: 100%; }
+  #hud small { color: #8aa0b6; }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="app"></div>
+<div id="hud">
+  <h1>triprox-cert-lab</h1>
+  <div>Drag to orbit · scroll to zoom</div>
+  <div>Move mesh B (right) along X:</div>
+  <input id="sep" type="range" min="-200" max="300" value="120" step="1" />
+  <div>separation X = <span class="num" id="sepv">0.00</span></div>
+  <div>minimum clearance = <span class="num" id="clr">—</span></div>
+  <div>closest tri pair = <span id="pair">—</span></div>
+  <small>number below is computed by the same <code>src/core.mjs</code> that <code>bench/verify.mjs</code> tests in node.</small>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
